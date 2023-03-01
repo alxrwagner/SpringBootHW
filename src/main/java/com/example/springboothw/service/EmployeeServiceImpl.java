@@ -36,7 +36,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     @Transactional
     public void add(Employee employee) {
-        employeeDAO.add(employee);
+        Employee employee1 = employee;
+        employee1.setId(null);
+        employeeDAO.add(employee1);
     }
 
     @Override

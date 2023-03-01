@@ -29,8 +29,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public void add(Employee employee) {
-        Employee employee1 = employee;
-        employee1.setId(null);
         Employee employeeNew = entityManager.merge(employee);
         employee.setId(employeeNew.getId());
     }
